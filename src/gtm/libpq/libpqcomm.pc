@@ -1,0 +1,9 @@
+Name: libpqcomm
+Description: PostgreSQL libpqcomm library
+Url: http://www.postgresql.org/
+Version: 9.5.5 (Postgres-XL 9.5r1.4)
+Requires: 
+Requires.private: 
+Cflags: -I/Users/gpadmin/workspace/postgresql/postgres-xl/../install/postgres-xl-bin/include
+Libs: -L/Users/gpadmin/workspace/postgresql/postgres-xl/../install/postgres-xl-bin/lib -lpqcomm
+Libs.private:  
