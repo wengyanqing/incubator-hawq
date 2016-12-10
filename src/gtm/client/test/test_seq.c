@@ -75,7 +75,7 @@ main(int argc, char *argv[])
 		sprintf(buf, "%d:%d", ii, ii);
 		seqkey.gsk_keylen = strlen(buf);
 		seqkey.gsk_key = buf;
-		if ((seqval = get_current(conn, &seqkey)) == InvalidSequenceValue)
+		if ((seqval = get_current(conn, &seqkey, NULL, 0, NULL)) == InvalidSequenceValue)
 			client_log(("get_current seq failed for sequene %s\n", seqkey.gsk_key));
 		else
 			client_log(("CURRENT SEQVAL(%s): %lld\n", seqkey.gsk_key, seqval));

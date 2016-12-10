@@ -34,7 +34,7 @@ main(int argc, char *argv[])
 
 	for (ii = 0; ii < 20; ii++)
 	{
-		gxid[ii] = begin_transaction(conn, GTM_ISOLATION_SERIALIZABLE, timestamp);
+		gxid[ii] = begin_transaction(conn, GTM_ISOLATION_SERIALIZABLE, NULL, timestamp);
 		if (gxid[ii] != InvalidGlobalTransactionId)
 			client_log(("Started a new transaction (GXID:%u)\n", gxid[ii]));
 		else
@@ -60,7 +60,7 @@ main(int argc, char *argv[])
 		}
 		else
 		{
-			if (!commit_transaction(conn, gxid[ii]))
+			if (!commit_transaction(conn, gxid[ii], 0, NULL))
 				client_log(("COMMIT successful (GXID:%u)\n", gxid[ii]));
 			else
 				client_log(("COMMIT failed (GXID:%u)\n", gxid[ii]));
