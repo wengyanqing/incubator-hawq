@@ -5155,6 +5155,12 @@ _ACEOF
 
 
 cat >>confdefs.h <<_ACEOF
+#define PGXC_VERSION "$GP_VERSION"
+_ACEOF
+
+
+
+cat >>confdefs.h <<_ACEOF
 #define HQ_VERSION "$HQ_VERSION"
 _ACEOF
 

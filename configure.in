@@ -537,6 +537,10 @@ AC_DEFINE_UNQUOTED(GP_VERSION,
                    ["$GP_VERSION"],
                    [A string containing the Greenplum version number])
                  
+AC_DEFINE_UNQUOTED(PGXC_VERSION,
+                   ["$GP_VERSION"],
+                   [A string containing the Postgres-xl version number])
+
 AC_DEFINE_UNQUOTED(HQ_VERSION,
                    ["$HQ_VERSION"],
                    [A string containing the HAWQ version number])

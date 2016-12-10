@@ -68,6 +68,9 @@
 /* A string containing the Greenplum version number */
 #undef GP_VERSION
 
+/* A string containing the Postgres-xl version number */
+#undef PGXC_VERSION
+
 /* Greenplum version as a number */
 #undef GP_VERSION_NUM
 

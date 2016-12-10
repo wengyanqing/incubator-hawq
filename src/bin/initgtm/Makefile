@@ -25,7 +25,7 @@ all: initgtm
 initgtm: $(OBJS) | submake-libpgport
 	$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) $(LDFLAGS_EX) $(LIBS) -o $@$(X)
 
-pqsignal.c: % : $(top_srcdir)/src/port/%
+pqsignal.c: % : $(top_srcdir)/src/interfaces/libpq/%
 	rm -f $@ && $(LN_S) $< .
 
 install: all installdirs

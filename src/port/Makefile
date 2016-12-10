@@ -31,6 +31,7 @@ override CPPFLAGS := -I$(top_builddir)/src/port -DFRONTEND $(CPPFLAGS)
 LIBS += $(PTHREAD_LIBS)
 
 OBJS = $(LIBOBJS) $(PG_CRC32C_OBJS) chklocale.o copydir.o dirmod.o exec.o noblock.o path.o \
+	pgcheckdir.o pgmkdirp.o \
 	pgsleep.o pgstrcasecmp.o qsort.o qsort_arg.o sprompt.o thread.o strlcpy.o strlcat.o
 ifneq (,$(filter $(PORTNAME),cygwin win32))
 OBJS += pipe.o
