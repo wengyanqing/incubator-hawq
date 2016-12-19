@@ -23,15 +23,18 @@ all install installdirs uninstall distprep:
 	@for dir in $(WANTED_DIRS); do \
 		$(MAKE) -C $$dir $@ || exit; \
 	done
+	$(MAKE) -C postgres-xl $@ 
 
 clean distclean maintainer-clean:
 	@for dir in $(WANTED_DIRS); do \
 		$(MAKE) -C $$dir $@ || true; \
 	done
+	$(MAKE) -C postgres-xl $@ 
 
 # We'd like check operations to run all the subtests before failing.
 check installcheck: pgcrypto_prepare
 	@CHECKERR=0; for dir in $(WANTED_DIRS); do \
 		$(MAKE) -C $$dir $@ || CHECKERR=$$?; \
 	done; \
+	$(MAKE) -C postgres-xl $@ 
 	exit $$CHECKERR
